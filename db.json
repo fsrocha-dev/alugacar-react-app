@@ -1,12 +1,22 @@
 {
-    "series":[
+    "brands":[
         {
-        "id": 1,
-        "name": "Friends"
+            "id": 1,
+            "name": "Fiat"
         },
         {
             "id": 2,
-            "name": "La Casa de Papel"
+            "name": "Ford"
+        }
+    ],
+    "cars":[
+        {
+            "id": 1,
+            "name": "Uno"
+        },
+        {
+            "id": 2,
+            "name": "Palio"
         }
     ]
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+
+import api from './Api'
 
 class App extends Component {
 
@@ -13,6 +14,8 @@ class App extends Component {
   }
 
   componentDidMount(){
+    api.loadBrands()
+      .then((res)=>console.log(res))
     
   }
 
