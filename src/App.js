@@ -1,3 +1,7 @@
+/* 
+"Cada sonho que você deixa pra trás, é um pedaço do seu futuro que deixa de existir." 
+(Steve Jobs)
+*/
 import React, { Component } from 'react'
 
 import api from './Api'
@@ -8,17 +12,28 @@ class App extends Component {
     super(props)
 
     this.state = {
-     
+      brands: [],
+      isLoading: false     
     }
 
   }
 
   componentDidMount(){
+    this.setState({ isLoading: true })
     api.loadBrands()
-      .then((res)=>console.log(res))
-    
+      .then((res)=>{
+        this.setState({
+          isLoading: false,
+          brands: res.data
+        })
+      }) 
   }
 
+  renderBrandLink(brand){
+    return(
+        <a href='' className="navbar-link"> {brand} &nbsp;&nbsp;</a>
+      )
+  }
 
   render() {
     return (
@@ -31,13 +46,16 @@ class App extends Component {
                 </a>
               </div>
 
-              <div className="collapse navbar-collapse navbar-ex1-collapse">
-                <ul className="nav navbar-nav">
-                  <li>
-                    <a href="">Cadastrar</a>
-                  </li>
-                </ul>
-              </div>
+              <p class="navbar-text navbar-right">
+              {
+                !this.state.isLoading &&
+                <div>
+                  {this.state.brands.map(this.renderBrandLink)}
+                  <a href="#" className="navbar-link">Cadastrar Veículo</a>
+                </div>
+              }
+              </p>
+
           </div>
         </nav>
 
@@ -52,6 +70,13 @@ class App extends Component {
               </div>
             </div>
           </div>
+        </section>
+
+        <section>
+          {
+            this.state.isLoading &&
+            <span>Carregando...</span>
+          }
         </section>
       </div>
     )
