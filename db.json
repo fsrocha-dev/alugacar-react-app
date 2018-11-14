@@ -6,12 +6,16 @@
         {
             "id": 1,
             "name": "Uno",
-            "brand": "Fiat"
+            "brand": "Fiat",
+            "status": "Oculpado",
+            "valueDay": "80.00"
         },
         {
             "id": 2,
             "name": "KA",
-            "brand": "Ford"
+            "brand": "Ford",
+            "status": "Disponível",
+            "valueDay": "70.00"
         }
     ]
 }

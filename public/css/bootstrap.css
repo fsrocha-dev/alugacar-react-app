@@ -4571,6 +4571,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-link {
   color: #777;
+  margin-right: 5px;
 }
 .navbar-default .navbar-link:hover {
   color: #333;
