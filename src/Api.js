@@ -6,10 +6,12 @@ const api = axios.create({
 
 export const loadBrands = () => api.get('brands')
 export const saveCar = (newCar) => api.post('cars', newCar)
+export const loadCarsByBrand = (brand) => api.get('cars?brand='+brand)
 
 const apis = {
     loadBrands: loadBrands,
-    saveCar: saveCar
+    saveCar: saveCar,
+    loadCarsByBrand: loadCarsByBrand
 }
 
 export default apis

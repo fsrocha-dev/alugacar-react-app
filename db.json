@@ -8,22 +8,33 @@
       "id": 1,
       "name": "Uno",
       "brand": "Fiat",
-      "status": "Oculpado",
-      "valueDay": "80.00"
+      "status": "busy",
+      "valueDay": "80.00",
+      "photo": "uno.jpg"
     },
     {
       "id": 2,
       "name": "KA",
       "brand": "Ford",
-      "status": "Disponível",
-      "valueDay": "70.00"
+      "status": "available",
+      "valueDay": "70.00",
+      "photo": "ka.jpg"
     },
     {
       "name": "Punto",
       "brand": "Fiat",
       "status": "available",
       "valueday": "80.00",
+      "photo": "punto.jpg",
       "id": 3
+    },
+    {
+      "name": "Fusion",
+      "brand": "Ford",
+      "status": "available",
+      "valueday": "150.00",
+      "photo": "fusion.jpg",
+      "id": 4
     }
   ]
 }

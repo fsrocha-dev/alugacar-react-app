@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import api from './Api'
 
+import { Redirect } from 'react-router-dom'
+
 const statuscar = {
     'busy': 'Ocupado',
     'available': 'Disponível'
@@ -13,7 +15,8 @@ class NewCar extends Component {
     
         this.state = {
           brands: [],
-          isLoading: false     
+          isLoading: false,
+          redirect: false     
         }
         this.saveCar = this.saveCar.bind(this)
     }
@@ -37,12 +40,20 @@ class NewCar extends Component {
             valueday: this.refs.valueday.value
         }
         api.saveCar(newCar)
-            .then((res)=>console.log(res))
+            .then((res)=>{
+                this.setState({
+                    redirect: '/cars/'+this.refs.brand.value
+                })
+            })
     }
 
     render(){
         return(
             <section className="intro-section">
+                {
+                   this.state.redirect &&
+                   <Redirect to={this.state.redirect} /> 
+                }
                 <h1>Cadastrar veículo</h1>
                       <form>
                         Nome: <input type="text" ref='name' className="form-control" /><br />
