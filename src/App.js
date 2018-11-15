@@ -10,6 +10,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './Home'
+import Cars from './Cars'
 import NewCar from './NewCar'
 
 const About = () => <section className="intro-section"><h1>Sobre nós</h1></section>
@@ -35,6 +36,7 @@ class App extends Component {
             </div>
             </nav>
             <Route exact path='/' component={Home} />
+            <Route exact path='/cars/:brand' component={Cars} />
             <Route exact path="/about" component={About} />
             <Route exact path='/newcar' component={NewCar} />
          

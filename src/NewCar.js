@@ -36,10 +36,8 @@ class NewCar extends Component {
             status: this.refs.status.value,
             valueday: this.refs.valueday.value
         }
-
-        console.log(newCar)
-
-   
+        api.saveCar(newCar)
+            .then((res)=>console.log(res))
     }
 
     render(){

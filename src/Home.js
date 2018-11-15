@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import api from './Api'
 
@@ -26,7 +27,7 @@ class Home extends Component {
     
       renderBrandLink(brand){
         return(
-            <a href='' className="btn btn-warning btn-lg margin-5"> {brand} </a>
+            <span key={brand} ><Link to={`/cars/${brand}`} className="btn btn-warning btn-lg margin-5"> {brand} </Link></span>
           )
       }
 
