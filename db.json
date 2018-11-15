@@ -35,6 +35,20 @@
       "valueday": "150.00",
       "photo": "fusion.jpg",
       "id": 4
+    },
+    {
+      "name": "Toro",
+      "brand": "Fiat",
+      "status": "busy",
+      "valueday": "150.00",
+      "id": 5
+    },
+    {
+      "name": "Idea",
+      "brand": "Fiat",
+      "status": "available",
+      "valueday": "45.00",
+      "id": 6
     }
   ]
 }

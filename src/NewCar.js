@@ -49,7 +49,10 @@ class NewCar extends Component {
 
     render(){
         return(
-            <section className="intro-section">
+            <section id="intro" className="intro-section">
+                <div className="container">
+                <div className="col-lg-4"></div>
+                    <div className="row col-lg-4 col-md-12 col-sm-12">
                 {
                    this.state.redirect &&
                    <Redirect to={this.state.redirect} /> 
@@ -77,6 +80,8 @@ class NewCar extends Component {
                         Valor: <input ref='valueday' type="text" className="form-control" /><br />
                         <button type="button" onClick={this.saveCar} >Cadastrar Veículo</button>
                       </form>
+                    </div>
+                </div>            
             </section>
         )
     }

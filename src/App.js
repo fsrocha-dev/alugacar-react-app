@@ -25,7 +25,7 @@ class App extends Component {
             <div className="container">
               <div className="navbar-header page-scroll">
                 <Link className="navbar-brand page-scroll" to="/">
-                    <img src="images/logo-topo.png" height="30" />
+                    <img src="/images/logo-topo.png" height="30" />
                 </Link>
               </div>
               <p className="navbar-text navbar-right">
