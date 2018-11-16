@@ -14,9 +14,15 @@ class Cars extends Component {
           cars: [],
           isLoading: false     
         }
+        this.renderCars = this.renderCars.bind(this)
+        this.loadData = this.loadData.bind(this)
     }
 
     componentDidMount(){
+       this.loadData() 
+    }
+
+    loadData(){
         this.setState({isLoading: true})
         api.loadCarsByBrand(this.props.match.params.brand)
             .then((res)=>{
@@ -25,6 +31,11 @@ class Cars extends Component {
                     cars: res.data
                 })
             })
+    }
+
+    deleteCars(id){
+        api.deleteCars(id)
+            .then((res) => this.loadData())
     }
 
     renderCars(cars){
@@ -40,6 +51,7 @@ class Cars extends Component {
                         </div>
                         <div className="col-xs-12 col-md-12 col-sm-12">
                         <a className="btn btn-success" href="">Gerenciar</a>
+                        <a className="btn btn-danger"  onClick={() => this.deleteCars(cars.id)}>Excluir</a>
                         </div>
                         </div>
                     </div>
@@ -54,6 +66,14 @@ class Cars extends Component {
                 <div className="container">
                     <div className="row">
                         <h1>Carros da { this.props.match.params.brand }</h1>
+                        {
+                            this.state.isLoading &&
+                            <p>Carregando, aguarde...</p>
+                        }
+                        {
+                            !this.state.isLoading && this.state.cars.length === 0 &&
+                            <div className="alert alert-info">Não há carros cadastrados</div>
+                        }
                         <div className="row col-lg-12">
                             <div id="cars" className="row list-group">
                                 {
