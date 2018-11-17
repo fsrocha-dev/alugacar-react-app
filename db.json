@@ -6,36 +6,25 @@
   ],
   "cars": [
     {
-      "id": 1,
-      "name": "Uno",
-      "brand": "Fiat",
-      "status": "busy",
-      "valueDay": "80.00",
-      "photo": "uno.jpg"
-    },
-    {
       "id": 2,
       "name": "KA",
       "brand": "Ford",
       "status": "available",
-      "valueDay": "70.00",
-      "photo": "ka.jpg"
+      "valueday": "70.00"
     },
     {
+      "id": 3,
       "name": "Punto",
       "brand": "Fiat",
-      "status": "available",
-      "valueday": "80.00",
-      "photo": "punto.jpg",
-      "id": 3
+      "status": "busy",
+      "valueday": "70.00"
     },
     {
-      "name": "Fusion",
-      "brand": "Ford",
-      "status": "available",
-      "valueday": "150.00",
-      "photo": "fusion.jpg",
-      "id": 4
+      "id": 4,
+      "name": "Palio",
+      "brand": "Fiat",
+      "status": "busy",
+      "valueday": "60.00"
     }
   ]
 }

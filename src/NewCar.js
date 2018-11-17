@@ -4,22 +4,22 @@ import api from './Api'
 import { Redirect } from 'react-router-dom'
 
 const statuscar = {
-    'busy': 'Ocupado',
-    'available': 'Disponível'
+  'busy': 'Ocupado',
+  'available': 'Disponível'
 }
 
 class NewCar extends Component {
 
-    constructor(props){
-        super(props)
-    
-        this.state = {
-          brands: [],
-          isLoading: false,
-          redirect: false     
-        }
-        this.saveCar = this.saveCar.bind(this)
+  constructor(props){
+    super(props)
+
+    this.state = {
+      brands: [],
+      isLoading: false,
+      redirect: false     
     }
+    this.saveCar = this.saveCar.bind(this)
+  }
 
     componentDidMount(){
         this.setState({ isLoading: true })
@@ -33,18 +33,18 @@ class NewCar extends Component {
       }
 
     saveCar(){
-        const newCar = {
-            name: this.refs.name.value,
-            brand: this.refs.brand.value,
-            status: this.refs.status.value,
-            valueday: this.refs.valueday.value
-        }
-        api.saveCar(newCar)
-            .then((res)=>{
-                this.setState({
-                    redirect: '/cars/'+this.refs.brand.value
-                })
-            })
+      const newCar = {
+        name: this.refs.name.value,
+        brand: this.refs.brand.value,
+        status: this.refs.status.value,
+        valueday: this.refs.valueday.value
+      }
+      api.saveCar(newCar)
+        .then((res)=>{
+          this.setState({
+            redirect: '/cars/'+this.refs.brand.value
+          })
+        })
     }
 
     render(){

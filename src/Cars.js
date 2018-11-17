@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from './Api'
+import { Link } from 'react-router-dom'
 
 const statuscar = {
     'busy': 'Ocupado',
@@ -40,7 +41,7 @@ class Cars extends Component {
 
     renderCars(cars){
         return(
-            <div className="item  col-xs-3 col-lg-3">
+            <div key={cars.id} className="item  col-xs-3 col-lg-3">
                 <div className="thumbnail">
                     <img className="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                     <div className="caption">
@@ -50,7 +51,7 @@ class Cars extends Component {
                             <p className="lead">{cars.brand} / {statuscar[cars.status]}</p>
                         </div>
                         <div className="col-xs-12 col-md-12 col-sm-12">
-                        <a className="btn btn-success" href="">Gerenciar</a>
+                        <Link className="btn btn-success" to={'/edit/car/'+cars.id}>Gerenciar</Link>
                         <a className="btn btn-danger"  onClick={() => this.deleteCars(cars.id)}>Excluir</a>
                         </div>
                         </div>
